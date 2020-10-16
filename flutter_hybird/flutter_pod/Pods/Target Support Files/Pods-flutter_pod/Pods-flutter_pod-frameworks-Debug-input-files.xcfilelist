@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-flutter_pod/Pods-flutter_pod-frameworks.sh
+${PODS_ROOT}/../localPod/flutter_lib/frameworks/App.framework
+${PODS_ROOT}/../localPod/flutter_lib/frameworks/Flutter.framework
+${PODS_ROOT}/../localPod/flutter_lib/frameworks/url_launcher.framework

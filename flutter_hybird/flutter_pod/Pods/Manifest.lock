@@ -1,0 +1,16 @@
+PODS:
+  - flutter_lib (0.0.1)
+
+DEPENDENCIES:
+  - flutter_lib (from `localPod/flutter_lib`)
+
+EXTERNAL SOURCES:
+  flutter_lib:
+    :path: localPod/flutter_lib
+
+SPEC CHECKSUMS:
+  flutter_lib: 42986c8cdc280097d8f3f9e100e9ec51e5c19c0c
+
+PODFILE CHECKSUM: ca18e05ea6091b3bf9e35e10ab881744a87ed315
+
+COCOAPODS: 1.9.3
