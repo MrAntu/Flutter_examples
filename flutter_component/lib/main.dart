@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
         //ios标准手势，右滑返回样例  CupertinoPageRoute push
 //        home: RightBackDemo()
         // Overlay能够帮助你更加优雅高效的完成屏幕叠加。或者做一些浮动的控件。
-//        home: OverlayDemo()
+        home: OverlayDemo()
 //        home: OverlayDemo2()
 //        home: OverlayDemo3()
 
@@ -145,8 +145,9 @@ class MyApp extends StatelessWidget {
         // flutter_bloc
 //        home: CounterApp()
         // bloc结合Steam
-//        home: TickerPage());
+//        home: TickerPage()
         // bloc 列表请求数据
-        home: PostsPage());
+//        home: PostsPage()
+        );
   }
 }

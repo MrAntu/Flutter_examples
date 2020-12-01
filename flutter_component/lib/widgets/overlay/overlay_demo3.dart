@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-
 class OverlayDemo3 extends StatefulWidget {
   const OverlayDemo3({Key key}) : super(key: key);
 
@@ -24,12 +23,10 @@ class _OverlayDemo3State extends State<OverlayDemo3> {
             child: MyContainer(),
           );
         },
-
       ),
     );
   }
 }
-
 
 class MyContainer extends StatefulWidget {
   const MyContainer({Key key}) : super(key: key);
@@ -61,23 +58,20 @@ class _MyContainerState extends State<MyContainer> {
     OverlayEntry overlayEntry = OverlayEntry(builder: (context) {
       return Positioned(
         top: target.dy - height / 2,
-        left:  target.dx - width / 2,
+        left: target.dx - width / 2,
         child: Container(
           alignment: Alignment.center,
           height: height,
           width: width,
           color: Colors.redAccent,
           child: Material(
-            child: Text(
-                '${target.toString()}'
-            ),
+            child: Text('${target.toString()}'),
           ),
         ),
-      ) ;
+      );
     });
 
     overlayState.insert(overlayEntry);
-    Future.delayed(Duration(seconds: 1)).then((value) => overlayEntry.remove());
-
+//    Future.delayed(Duration(seconds: 1)).then((value) => overlayEntry.remove());
   }
 }

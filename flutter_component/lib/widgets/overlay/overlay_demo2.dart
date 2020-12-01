@@ -27,9 +27,7 @@ class _OverlayDemo2State extends State<OverlayDemo2> {
       body: Center(
         child: Text(
           'Overlay demo2',
-          style: TextStyle(
-            fontSize: 36
-          ),
+          style: TextStyle(fontSize: 36),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -50,7 +48,7 @@ class _OverlayDemo2State extends State<OverlayDemo2> {
         opaque: true,
         builder: (context) {
           return Opacity(
-            opacity: 0.5,
+            opacity: 1,
             child: Scaffold(
               body: Center(
                 child: Container(
@@ -62,7 +60,6 @@ class _OverlayDemo2State extends State<OverlayDemo2> {
             ),
           );
         });
-
 
     overlayState.insert(overlayEntry);
 
