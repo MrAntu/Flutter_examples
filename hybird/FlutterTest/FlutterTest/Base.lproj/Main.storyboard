@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JRA-yl-s5c">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FlutterTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHD-75-btm">
+                                <rect key="frame" x="137" y="311" width="73" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="Ibl-CJ-eMu"/>
+                                    <constraint firstAttribute="height" constant="30" id="meI-W8-mmU"/>
+                                </constraints>
+                                <state key="normal" title="跳转flutter"/>
+                                <connections>
+                                    <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXN-rA-9vq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-5i-0lq">
+                                <rect key="frame" x="113" y="464" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="B7V-af-o90"/>
+                                    <constraint firstAttribute="height" constant="30" id="dgT-7c-YyE"/>
+                                </constraints>
+                                <state key="normal" title="Push Flutter Page"/>
+                                <connections>
+                                    <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdg-Xp-pgW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-Ku-0Zh">
+                                <rect key="frame" x="104" y="528" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="0p6-5u-Ule"/>
+                                    <constraint firstAttribute="height" constant="30" id="iZy-Yl-JiM"/>
+                                </constraints>
+                                <state key="normal" title="Present Flutter Page"/>
+                                <connections>
+                                    <action selector="presentAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8gH-nf-H7o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADE-W5-WSX">
+                                <rect key="frame" x="130" y="609" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="OSx-UH-eOJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="ecV-i3-3kI"/>
+                                </constraints>
+                                <state key="normal" title="Push Embeded"/>
+                                <connections>
+                                    <action selector="pushEmbededAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yia-YG-D9f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ADE-W5-WSX" firstAttribute="top" secondItem="pc1-Ku-0Zh" secondAttribute="bottom" constant="51" id="KpV-ik-2nU"/>
+                            <constraint firstItem="Z3A-5i-0lq" firstAttribute="top" secondItem="qHD-75-btm" secondAttribute="bottom" constant="123" id="ODR-ED-XQB"/>
+                            <constraint firstItem="ADE-W5-WSX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="XQc-Cn-nzd"/>
+                            <constraint firstItem="Z3A-5i-0lq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="Y8F-bH-XIv"/>
+                            <constraint firstItem="qHD-75-btm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="ZpS-hI-Nhx"/>
+                            <constraint firstItem="pc1-Ku-0Zh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="104" id="bWH-ug-lER"/>
+                            <constraint firstItem="pc1-Ku-0Zh" firstAttribute="top" secondItem="Z3A-5i-0lq" secondAttribute="bottom" constant="34" id="esu-ru-Yyl"/>
+                            <constraint firstItem="qHD-75-btm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="223" id="pwe-Qp-CdB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NQi-rI-Eka"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Bz-E2-Ht3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRA-yl-s5c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pjy-jK-Ie7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sdv-EN-xZd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-Sf-k1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
