@@ -4,6 +4,11 @@ import 'demo2.dart';
 import 'toast.dart';
 import 'dialog_demo.dart';
 import 'bottom_sheet.dart';
+import 'bottom_sheet_corner.dart';
+import 'shoppoing_detail.dart';
+import 'loading_demo.dart';
+import 'custom_appBar.dart';
+import 'activity_alert.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,18 +34,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -93,6 +87,36 @@ class _MyHomePageState extends State<MyHomePage>
                         builder: (context) => BottomSheetDemo()));
                   },
                   child: Text('bottom_sheet')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BottomSheetCorner()));
+                  },
+                  child: Text('bottom_sheet_常见圆角样式')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoadingDemo()));
+                  },
+                  child: Text('loading封装')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ShoppingDetail()));
+                  },
+                  child: Text('shopping_detail')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CustomAppBar()));
+                  },
+                  child: Text('自定义导航栏')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ActivityAlert()));
+                  },
+                  child: Text('活动弹窗样式')),
             ],
           ),
         ),
