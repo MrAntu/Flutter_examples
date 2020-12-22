@@ -7,6 +7,7 @@
 
 import UIKit
 import flutter_boost
+
 class PlatformRouterImp: NSObject, FLBPlatform {
     func openNativeVC(_ url: String, urlParams: [AnyHashable : Any], exts: [AnyHashable : Any]) {
         var animated = true;
@@ -15,9 +16,9 @@ class PlatformRouterImp: NSObject, FLBPlatform {
         }
         let vc = ViewControllerDemo()
         if let _ = urlParams["present"] as? Bool {
-            navigationController()?.present(vc, animated: animated, completion: nil)
+            topViewController?.present(vc, animated: animated, completion: nil)
         } else {
-            navigationController()?.pushViewController(vc, animated: animated)
+            topViewController?.navigationController?.pushViewController(vc, animated: animated)
         }
     }
 
@@ -32,7 +33,7 @@ class PlatformRouterImp: NSObject, FLBPlatform {
         }
         let vc = FLTBaseViewController.init()
         vc.setName(url, params: urlParams)
-        navigationController()?.pushViewController(vc, animated: animated)
+        topViewController?.navigationController?.pushViewController(vc, animated: animated)
         completion(true)
     }
     
@@ -43,7 +44,7 @@ class PlatformRouterImp: NSObject, FLBPlatform {
         }
         let vc = FLTBaseViewController.init();
         vc.setName(url, params: urlParams);
-        navigationController()?.present(vc, animated: animated) {
+        topViewController?.present(vc, animated: animated) {
             completion(true);
         };
     }
@@ -53,25 +54,24 @@ class PlatformRouterImp: NSObject, FLBPlatform {
         if exts["animated"] != nil{
             animated = exts["animated"] as! Bool;
         }
-        let presentedVC = self.navigationController()?.presentedViewController;
+        let presentedVC = topViewController?.presentedViewController;
         let vc = presentedVC as? FLTBaseViewController;
         if vc?.uniqueIDString() == uid  {
             vc?.dismiss(animated: animated, completion: {
                 completion(true);
             });
-        }else if navigationController() == nil,
+        }else if topViewController?.navigationController == nil,
                  let vc = UIViewController.getTopViewController {
             vc.dismiss(animated: animated) {
                 completion(true)
             }
         } else {
-            self.navigationController()?.popViewController(animated: animated);
+            topViewController?.navigationController?.popViewController(animated: animated);
         }
     }
     
-    func navigationController() -> UINavigationController? {
-        
-        return UIViewController.getTopViewController?.navigationController;
+    var topViewController: UIViewController? {
+        return UIViewController.getTopViewController
     }
 
 }

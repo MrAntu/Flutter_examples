@@ -1,11 +1,8 @@
-CLANG_CXX_LANGUAGE_STANDARD = c++11
-CLANG_CXX_LIBRARY = libc++
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture" "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant" "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost" "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences" "${PODS_ROOT}/../../my_flutter/.ios/Flutter" "${PODS_ROOT}/../../my_flutter/.ios/Flutter/engine"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture" "${PODS_ROOT}/../localPod/flutter_lib/frameworks" "${PODS_ROOT}/Flutter"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost/flutter_boost.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences/shared_preferences.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost/flutter_boost.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences/shared_preferences.framework/Headers" -iframework "${PODS_ROOT}/../../my_flutter/.ios/Flutter/engine" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/flutter_boost" -iframework "${PODS_ROOT}/../../my_flutter/.ios/Flutter" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/shared_preferences"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "App" -framework "FDFullscreenPopGesture" -framework "Flutter" -framework "FlutterPluginRegistrant" -framework "flutter_boost" -framework "shared_preferences"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "App" -framework "FDFullscreenPopGesture" -framework "Flutter" -framework "FlutterPluginRegistrant" -framework "flutter_boost" -framework "shared_preferences"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

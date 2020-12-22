@@ -1,19 +1,17 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-flutter_application_path = '../my_flutter'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+#flutter_application_path = '../my_flutter'
+#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'FlutterTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  install_all_flutter_pods(flutter_application_path)
+#  install_all_flutter_pods(flutter_application_path)
 
   # Pods for FlutterTest
-  #pod 'Flutter', :podspec => '../Flutter/Debug/Flutter.podspec'
-  #pod 'Flutter', :podspec => 'localPod/Flutter.podspec'
-  #pod 'Flutter', :podspec => '../Flutter/Release/Flutter.podspec'
-  #pod 'flutter_lib', :path=> 'localPod/flutter_lib'
+  pod 'Flutter', :podspec => 'localPod/Flutter.podspec'
+  pod 'flutter_lib', :path=> 'localPod/flutter_lib'
   pod 'FDFullscreenPopGesture'
 
 end

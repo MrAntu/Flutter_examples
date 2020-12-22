@@ -9,6 +9,8 @@ import 'shoppoing_detail.dart';
 import 'loading_demo.dart';
 import 'custom_appBar.dart';
 import 'activity_alert.dart';
+import 'easy_toast/flutter_easyloading.dart';
+import 'easy_toast.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      builder: EasyLoading.init(),
     );
   }
 }
@@ -117,6 +120,12 @@ class _MyHomePageState extends State<MyHomePage>
                         builder: (context) => ActivityAlert()));
                   },
                   child: Text('活动弹窗样式')),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => EasyToast()));
+                  },
+                  child: Text('easy_toast')),
             ],
           ),
         ),

@@ -1,24 +1,12 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
-  - Flutter (1.0.0)
-  - flutter_boost (0.0.2):
-    - Flutter
-  - FlutterPluginRegistrant (0.0.1):
-    - Flutter
-    - flutter_boost
-    - shared_preferences
-  - my_flutter (0.0.1):
-    - Flutter
-  - shared_preferences (0.0.1):
-    - Flutter
+  - Flutter (1.22.100)
+  - flutter_lib (0.0.1)
 
 DEPENDENCIES:
   - FDFullscreenPopGesture
-  - Flutter (from `../my_flutter/.ios/Flutter/engine`)
-  - flutter_boost (from `../my_flutter/.ios/Flutter/.symlinks/flutter_boost/ios`)
-  - FlutterPluginRegistrant (from `../my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - my_flutter (from `../my_flutter/.ios/Flutter`)
-  - shared_preferences (from `../my_flutter/.ios/Flutter/.symlinks/shared_preferences/ios`)
+  - Flutter (from `localPod/Flutter.podspec`)
+  - flutter_lib (from `localPod/flutter_lib`)
 
 SPEC REPOS:
   trunk:
@@ -26,24 +14,15 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "../my_flutter/.ios/Flutter/engine"
-  flutter_boost:
-    :path: "../my_flutter/.ios/Flutter/.symlinks/flutter_boost/ios"
-  FlutterPluginRegistrant:
-    :path: "../my_flutter/.ios/Flutter/FlutterPluginRegistrant"
-  my_flutter:
-    :path: "../my_flutter/.ios/Flutter"
-  shared_preferences:
-    :path: "../my_flutter/.ios/Flutter/.symlinks/shared_preferences/ios"
+    :podspec: localPod/Flutter.podspec
+  flutter_lib:
+    :path: localPod/flutter_lib
 
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
-  FlutterPluginRegistrant: 212af05c422674636dd1e4f35653b1b81ecaefea
-  my_flutter: 5f71a42a61a499a9f322f2c0f62fc185a5807c9b
-  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  Flutter: 9dee48931b19ab821f12349d0e9a240110d1e364
+  flutter_lib: 42986c8cdc280097d8f3f9e100e9ec51e5c19c0c
 
-PODFILE CHECKSUM: 193a1c02a0f78a48ea08753c4826de71d529e631
+PODFILE CHECKSUM: b73f188c4faf6696e525fe5af797aacaa7f3e1cd
 
 COCOAPODS: 1.9.3

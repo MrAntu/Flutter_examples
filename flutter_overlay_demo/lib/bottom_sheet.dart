@@ -39,6 +39,21 @@ class BottomSheetDemo extends StatelessWidget {
                       Icons.favorite, Colors.pink, "Favorites", context),
                   _getListTile(
                       Icons.account_box, Colors.blue, "Profile", context),
+                  _getListTile(Icons.more, Colors.black45, "More", context),
+                  _getListTile(
+                      Icons.favorite, Colors.pink, "Favorites", context),
+                  _getListTile(
+                      Icons.account_box, Colors.blue, "Profile", context),
+                  _getListTile(Icons.more, Colors.black45, "More", context),
+                  _getListTile(
+                      Icons.favorite, Colors.pink, "Favorites", context),
+                  _getListTile(
+                      Icons.account_box, Colors.blue, "Profile", context),
+                  _getListTile(Icons.more, Colors.black45, "More", context),
+                  _getListTile(
+                      Icons.favorite, Colors.pink, "Favorites", context),
+                  _getListTile(
+                      Icons.account_box, Colors.blue, "Profile", context),
                 ],
               ),
             ),

@@ -198,17 +198,17 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework"
-  install_framework "${PODS_ROOT}/../../my_flutter/.ios/Flutter/engine/Flutter.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/flutter_boost/flutter_boost.framework"
-  install_framework "${PODS_ROOT}/../../my_flutter/.ios/Flutter/App.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/shared_preferences/shared_preferences.framework"
+  install_framework "${PODS_ROOT}/Flutter/Flutter.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/App.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/flutter_boost.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/shared_preferences.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework"
-  install_framework "${PODS_ROOT}/../../my_flutter/.ios/Flutter/engine/Flutter.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/flutter_boost/flutter_boost.framework"
-  install_framework "${PODS_ROOT}/../../my_flutter/.ios/Flutter/App.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/shared_preferences/shared_preferences.framework"
+  install_framework "${PODS_ROOT}/Flutter/Flutter.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/App.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/flutter_boost.framework"
+  install_framework "${PODS_ROOT}/../localPod/flutter_lib/frameworks/shared_preferences.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
