@@ -40,7 +40,6 @@ class FindFocusProvider extends ViewStateProvider {
       return data;
     } catch (e, s) {
       _refreshController.refreshCompleted();
-
       setError(e, s);
       return null;
     }
@@ -85,9 +84,11 @@ class FindFocusProvider extends ViewStateProvider {
   }
 
   @override
+  @mustCallSuper
   void dispose() {
     // TODO: implement dispose
     _refreshController.dispose();
+    print("object2");
     super.dispose();
   }
 }

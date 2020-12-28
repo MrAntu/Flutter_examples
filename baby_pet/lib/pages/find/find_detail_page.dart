@@ -41,15 +41,19 @@ class _FindDetailPageState extends State<FindDetailPage> {
       ),
       body: ConsumeProviderWidget<FindDetailProvider>(
         model: FindDetailProvider(),
-        onModelReady: (viewModel) {
+        onReady: (viewModel) {
 //          viewModel.requestFindDetail(messageId);
           viewModel.refreshData(widget.messageId, first: true);
         },
+        onLoadingWidget: (ctx, model) {
+          Toast.showLoading();
+          return Container();
+        },
         builder: (ctx, viewModel, child) {
-          if (viewModel.viewState == ViewState.busy) {
-            Toast.showLoading();
-            return Container();
-          }
+          // if (viewModel.viewState == ViewState.busy) {
+          //   Toast.showLoading();
+          //   return Container();
+          // }
           Toast.dismiss();
           if (viewModel.viewState == ViewState.error) {
             Toast.showError(viewModel.viewStateError.toString());

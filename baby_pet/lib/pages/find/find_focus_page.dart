@@ -18,18 +18,18 @@ class _FindFocusPageState extends State<FindFocusPage>
   Widget build(BuildContext context) {
     return ConsumeProviderWidget<FindFocusProvider>(
         model: FindFocusProvider(),
-        onModelReady: (model) {
+        onReady: (model) {
           model.refreshData(first: true);
         },
         builder: (ctx, model, child) {
-          if (model.viewState == ViewState.busy) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          if (model.viewState == ViewState.error) {
-            Toast.showError(model.viewStateError.toString());
-          }
+          // if (model.viewState == ViewState.busy) {
+          //   return Center(
+          //     child: CircularProgressIndicator(),
+          //   );
+          // }
+          // if (model.viewState == ViewState.error) {
+          //   Toast.showError(model.viewStateError.toString());
+          // }
           return _renderContent(model);
         });
   }

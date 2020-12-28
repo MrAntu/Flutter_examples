@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage>
       child: Scaffold(
         body: NestedScrollView(
           controller: _scrollController,
+          // physics: BouncingScrollPhysics(),
           headerSliverBuilder: (ctx, innerBoxIsScrolled) {
             return <Widget>[
               HomeHeader(scrollTop: isScrollTop),

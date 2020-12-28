@@ -13,7 +13,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter/cupertino.dart';
 import 'providers/user_provider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

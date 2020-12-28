@@ -1,40 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../providers/view_state_provider.dart';
+import '../exports.dart';
+
+typedef WidgetProviderBuilder<T extends ChangeNotifier> = Widget Function(
+    BuildContext context, T model);
 
 class ConsumeProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
   final T model;
   final Widget child;
   final bool autoDispose;
-  final ValueWidgetBuilder<T> builder;
-  final Function(T model) onModelReady;
-
-  const ConsumeProviderWidget(
-      {Key key,
-      @required this.model,
-      @required this.builder,
-      this.child,
-      this.onModelReady,
-      this.autoDispose = true})
-      : super(key: key);
+  final ValueWidgetBuilder builder;
+  // final Function(T model) onModelReady;
+  final WidgetProviderBuilder onLoadingWidget;
+  final WidgetProviderBuilder onErrorWidget;
+  final ValueChanged onReady;
+  const ConsumeProviderWidget({
+    Key key,
+    @required this.model,
+    @required this.builder,
+    this.child,
+    this.onReady,
+    this.autoDispose = true,
+    this.onLoadingWidget,
+    this.onErrorWidget,
+  }) : super(key: key);
 
   @override
-  _ConsumeProviderWidgetState<T> createState() =>
-      _ConsumeProviderWidgetState<T>();
+  _ConsumeProviderWidgetState createState() => _ConsumeProviderWidgetState();
 }
 
 class _ConsumeProviderWidgetState<T extends ChangeNotifier>
-    extends State<ConsumeProviderWidget<T>> {
+    extends State<ConsumeProviderWidget> {
   T model;
   @override
   void initState() {
     super.initState();
     model = widget.model;
-    widget.onModelReady?.call(model);
+    if (widget.onReady != null) {
+      widget.onReady(widget.model);
+    }
   }
 
   @override
   void dispose() {
     if (widget.autoDispose) {
+      print("object1");
       model.dispose();
     }
     super.dispose();
@@ -45,8 +56,35 @@ class _ConsumeProviderWidgetState<T extends ChangeNotifier>
     return ChangeNotifierProvider<T>.value(
       value: model,
       child: Consumer<T>(
-        builder: widget.builder,
         child: widget.child,
+        // builder: widget.builder,
+        builder: (context, model, child) {
+          if (model is ViewStateProvider) {
+            print('123132');
+            // 加载中
+            if (model.viewState == ViewState.busy) {
+              if (widget.onLoadingWidget != null) {
+                return widget.onLoadingWidget(context, model);
+              }
+              // 默认
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+
+            // 加载错误
+            if (model.viewState == ViewState.error) {
+              Toast.showError(model.viewStateError.toString());
+              if (widget.onErrorWidget != null) {
+                return widget.onErrorWidget(context, model);
+              }
+              // 默认
+              return EmptyWidget(showReload: false);
+            }
+          }
+
+          return widget.builder(context, model, child);
+        },
       ),
     );
   }

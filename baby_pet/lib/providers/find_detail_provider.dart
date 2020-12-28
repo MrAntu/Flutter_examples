@@ -79,6 +79,7 @@ class FindDetailProvider extends ViewStateProvider {
   @override
   void dispose() {
     refreshController.dispose();
+    print('obhsdf');
     // TODO: implement dispose
     super.dispose();
   }

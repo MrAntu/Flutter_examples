@@ -97,6 +97,7 @@ class ViewStateProvider extends ChangeNotifier {
   void dispose() {
     // TODO: implement dispose
     _disposed = true;
+    print("object3");
     super.dispose();
   }
 }
