@@ -51,6 +51,7 @@ dependencies:
   extended_nested_scroll_view: ^1.0.1
   video_player: ^1.0.1
   shimmer: ^1.1.2 #骨架屏
+  get: ^3.24.0
 
 dev_dependencies:
   flutter_test:

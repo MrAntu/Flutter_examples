@@ -5,6 +5,9 @@ import '../../exports.dart';
 import 'views/find_detail_content.dart';
 import 'views/comment_item.dart';
 import 'views/find_bottom_tool.dart';
+import 'package:get/get.dart';
+import 'detail_controller.dart';
+import 'base_controller.dart';
 
 class FindDetailPage extends StatefulWidget {
   final int messageId;
@@ -23,6 +26,7 @@ class _FindDetailPageState extends State<FindDetailPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    // Get.lazyPut(() => DetailController());
   }
 
   @override
@@ -34,6 +38,37 @@ class _FindDetailPageState extends State<FindDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    // return Scaffold(
+    //     resizeToAvoidBottomInset: false, // 防止底部被键盘弹起
+    //     appBar: AppBar(
+    //       title: Text('动态详情'),
+    //     ),
+    //     body: GetBuilder<DetailController>(
+    //       init: DetailController(),
+    //       didChangeDependencies: (_) {
+    //         Get.find<DetailController>()
+    //             .refreshData(widget.messageId, first: true);
+    //       },
+    //       builder: (controller) {
+    //         // 加载中
+    //         if (controller.viewState == BaseViewState.busy) {
+    //           // 默认
+    //           return Center(
+    //             child: CircularProgressIndicator(),
+    //           );
+    //         }
+    //
+    //         // 加载错误
+    //         if (controller.viewState == BaseViewState.error) {
+    //           Toast.showError(controller.viewStateError.toString());
+    //           // 默认
+    //           return EmptyWidget(showReload: false);
+    //         }
+    //         return Container(
+    //           child: Text('加载成功'),
+    //         );
+    //       },
+    //     ));
     return Scaffold(
       resizeToAvoidBottomInset: false, // 防止底部被键盘弹起
       appBar: AppBar(

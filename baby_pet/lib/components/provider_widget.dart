@@ -11,7 +11,6 @@ class ConsumeProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
   final Widget child;
   final bool autoDispose;
   final ValueWidgetBuilder builder;
-  // final Function(T model) onModelReady;
   final WidgetProviderBuilder onLoadingWidget;
   final WidgetProviderBuilder onErrorWidget;
   final ValueChanged onReady;
@@ -60,7 +59,6 @@ class _ConsumeProviderWidgetState<T extends ChangeNotifier>
         // builder: widget.builder,
         builder: (context, model, child) {
           if (model is ViewStateProvider) {
-            print('123132');
             // 加载中
             if (model.viewState == ViewState.busy) {
               if (widget.onLoadingWidget != null) {
