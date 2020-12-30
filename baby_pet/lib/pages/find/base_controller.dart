@@ -37,9 +37,9 @@ class BaseController extends GetxController {
   ErrorModel get viewStateError => _viewStateError;
 
   /// 刷新UI时，调用此方法，防止网络请求close后，在进行刷新
-  void updateUI() {
+  void updateUI([List<String> ids, bool condition = true]) {
     if (!_disposed) {
-      update();
+      update(ids, condition);
     }
   }
 
